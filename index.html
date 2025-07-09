@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POMODORO WEBSITE - BY TATAQDEV</title>
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FLOWBITE -->
+     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <!-- MY STYLE -->
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Montserrat;
+      }
+
+      body {
+        margin-top: 30px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="mx-[20px] lg:mx-[70px]">
+    <header class="flex items-center justify-center gap-x-[10px]">
+      <div class="relative block !pb-[3px]">
+        <h1 class="font-bold text-[24px]">POMODORO</h1>
+        <span class="absolute bottom-0 left-0 w-full h-[5px] bg-[#AC289A] rounded-full"></span>
+      </div>
+
+      <div class="relative block !pb-[3px]">
+        <h2 class="font-bold text-[24px]">WEBSITE</h2>
+        <span class="absolute bottom-0 left-0 w-full h-[5px] bg-[#730264] rounded-full"></span>
+      </div>
+    </header>
+
+    <main class="p-3 rounded-[5px] bg-[#FFD2F9] mt-[50px] space-y-[60px]">
+        <nav aria-label="NAVBAR TOP" class="flex items-center justify-center gap-x-[20px]">
+            <button class="font-bold text-white text-[14px] bg-[#C803AE] border-2 border-[#C803AE] rounded-[5px] px-[10px] py-[6px] hover:bg-[#C803AE] hover:text-white transition-all">FOCUS</button>
+
+            <button class="font-bold text-[#C803AE] text-[14px] bg-transparent border-2 border-[#C803AE] rounded-[5px] px-[10px] py-[6px] hover:bg-[#C803AE] hover:text-white transition-all">SHORT BREAK</button>
+
+            <button class="font-bold text-[#C803AE] text-[14px] bg-transparent border-2 border-[#C803AE] rounded-[5px] px-[10px] py-[6px] hover:bg-[#C803AE] hover:text-white transition-all">LONG BREAK</button>
+        </nav>
+
+        <h3 class="font-bold text-center text-[80px]"></h3>
+
+        <nav aria-label="NAVBAR BOTTOM" class="flex items-center justify-center gap-x-[20px]">
+            <button class="bg-transparent border-2 border-[#730264] rounded-[5px] px-[10px] py-[5px] text-[#730264] hover:bg-[#730264] hover:text-white transition-all">
+                <svg aria-label="RESTART" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m3.935-16.408a.75.75 0 0 1 .467.694v2.715a.75.75 0 0 1-.75.75H13a.75.75 0 0 1-.537-1.274l.762-.78a4.17 4.17 0 0 0-4.224 1.089c-1.668 1.707-1.668 4.483 0 6.19a4.17 4.17 0 0 0 5.998 0a4.4 4.4 0 0 0 1.208-2.472c.058-.418.39-.77.812-.77c.406 0 .742.325.703.729a5.9 5.9 0 0 1-1.65 3.562a5.67 5.67 0 0 1-8.144 0c-2.237-2.29-2.237-5.997 0-8.287a5.67 5.67 0 0 1 6.437-1.208l.75-.768a.75.75 0 0 1 .82-.17" clip-rule="evenodd"/></svg>
+            </button>
+            
+            <button class="start-timer bg-[#730264] rounded-[5px] drop-shadow-md font-bold text-white text-[20px] px-[28px] py-[8px]">START TIMER</button>
+
+            <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="bg-transparent border-2 border-black rounded-[5px] px-[10px] py-[5px] text-black hover:bg-black hover:text-white transition-all" type="button">
+               <svg aria-label="SETTING" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 1030 1030"><path fill="currentColor" d="M512.5 390.6c-29.9 0-57.9 11.6-79.1 32.8c-21.1 21.2-32.8 49.2-32.8 79.1s11.7 57.9 32.8 79.1c21.2 21.1 49.2 32.8 79.1 32.8s57.9-11.7 79.1-32.8c21.1-21.2 32.8-49.2 32.8-79.1s-11.7-57.9-32.8-79.1a110.96 110.96 0 0 0-79.1-32.8m412.3 235.5l-65.4-55.9c3.1-19 4.7-38.4 4.7-57.7s-1.6-38.8-4.7-57.7l65.4-55.9a32.03 32.03 0 0 0 9.3-35.2l-.9-2.6a442.5 442.5 0 0 0-79.6-137.7l-1.8-2.1a32.12 32.12 0 0 0-35.1-9.5l-81.2 28.9c-30-24.6-63.4-44-99.6-57.5l-15.7-84.9a32.05 32.05 0 0 0-25.8-25.7l-2.7-.5c-52-9.4-106.8-9.4-158.8 0l-2.7.5a32.05 32.05 0 0 0-25.8 25.7l-15.8 85.3a353.4 353.4 0 0 0-98.9 57.3l-81.8-29.1a32 32 0 0 0-35.1 9.5l-1.8 2.1a445.9 445.9 0 0 0-79.6 137.7l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.2 56.5c-3.1 18.8-4.6 38-4.6 57c0 19.2 1.5 38.4 4.6 57l-66 56.5a32.03 32.03 0 0 0-9.3 35.2l.9 2.6c18.1 50.3 44.8 96.8 79.6 137.7l1.8 2.1a32.12 32.12 0 0 0 35.1 9.5l81.8-29.1c29.8 24.5 63 43.9 98.9 57.3l15.8 85.3a32.05 32.05 0 0 0 25.8 25.7l2.7.5a448.3 448.3 0 0 0 158.8 0l2.7-.5a32.05 32.05 0 0 0 25.8-25.7l15.7-84.9c36.2-13.6 69.6-32.9 99.6-57.5l81.2 28.9a32 32 0 0 0 35.1-9.5l1.8-2.1c34.8-41.1 61.5-87.4 79.6-137.7l.9-2.6c4.3-12.4.6-26.3-9.5-35m-412.3 52.2c-97.1 0-175.8-78.7-175.8-175.8s78.7-175.8 175.8-175.8s175.8 78.7 175.8 175.8s-78.7 175.8-175.8 175.8"/></svg>
+            </button>
+        </nav>
+    </main>
+
+    <div class="mt-[50px] space-y-[15px]">
+        <h3 class="font-bold text-[14px]">APA ITU TEKNIK POMODORO?</h3>
+        <p class="text-[14px] text-justify">Teknik Pomodoro adalah metode manajemen waktu di mana Anda melakukan pekerjaan yang terfokus selama interval 25 menit — yang dikenal sebagai pomodoro — dan beristirahat selama lima menit.</p>
+    </div>
+
+    <div class="mt-[20px] space-y-[15px]">
+        <h3 class="font-bold text-[14px]">BAGAIMANA SEJARAH TEKNIK POMODORO?</h3>
+        <p class="text-[14px] text-justify">Teknik Pomodoro ditemukan pada akhir tahun 1980-an oleh Francesco Cirillo, seorang mahasiswa. Seperti banyak mahasiswa yang kewalahan dengan tugas dan jadwal belajar yang padat, Cirillo berjuang untuk menyelesaikan tugas tanpa merasa jenuh. <br><br>
+        Karena yakin bahwa setiap kemajuan adalah kemajuan yang baik, ia menantang dirinya sendiri untuk hanya fokus selama sepuluh menit. Untuk berkomitmen pada tantangan ini, ia menggunakan pengatur waktu dapur berbentuk tomat, dan lahirlah Teknik Pomodoro.
+        </p>
+    </div>
+
+    <div class="mt-[20px] space-y-[15px]">
+        <h3 class="font-bold text-[14px]">APAKAH TEKNIK POMODORO BERHASIL?</h3>
+        <p class="text-[14px] text-justify">Ya, kekonyolan yang sewenang-wenang dalam menggunakan tomat sebagai pengganti satuan waktu benar-benar membantu orang menyelesaikan sesuatu . Yang membuat Teknik Pomodoro begitu efektif adalah karena ia membangun konsistensi. Ia membantu Anda membangun rutinitas dan kebiasaan kerja yang konsisten daripada menunggu inspirasi datang. <br><br>
+        Bila Anda terbiasa dengan Teknik Pomodoro, Anda terhindar dari bias kognitif dalam manajemen waktu . Anda berhenti mengkhawatirkan daftar tugas yang tak ada habisnya dan mulai berfokus pada apa yang dapat Anda capai sekarang. Rutinitas dan kebiasaan sehat mengajarkan Anda untuk bersikap lebih baik kepada diri sendiri dan memiliki keseimbangan antara bekerja dan beristirahat yang membuat otak Anda tetap aktif.
+        </p>
+    </div>
+
+    <footer class="mt-[80px] border-t-[1px] border-[#7d7b7b] py-4 mx-auto text-center w-[80%] text-[12px]">
+        ©2025 TATAQDEV
+    </footer>
+
+<!-- Main modal -->
+<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-4xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b-3 border-gray-300 mx-4">
+                <h3 class="text-xl font-bold text-gray-900">
+                    SETTING TIMER
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="static-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-[30px]">
+                <div class="block space-y-[20px]">
+                    <h4 class="font-bold text-[16px] px-[20px] py-[5px] border-3 text-[#C803AE] border-[#C803AE] rounded-md w-max">FOCUS</h4>
+
+                    <div class="flex gap-[20px]">
+                        <input type="number" id="menit-focus" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+
+                        <input type="number" id="detik-focus" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+                    </div>
+
+                    <div class="block space-y-[20px]">
+                    <h4 class="font-bold text-[16px] px-[20px] py-[5px] border-3 text-[#C803AE] border-[#C803AE] rounded-md w-max">SHORT BREAK</h4>
+
+                    <div class="flex gap-[20px]">
+                        <input type="number" id="menit-short" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+
+                        <input type="number" id="detik-short" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+                    </div>
+                </div>
+
+                <div class="block space-y-[20px]">
+                    <h4 class="font-bold text-[16px] px-[20px] py-[5px] border-3 text-[#C803AE] border-[#C803AE] rounded-md w-max">LONG BREAK</h4>
+
+                    <div class="flex gap-[20px]">
+                        <input type="number" id="menit-long" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+
+                        <input type="number" id="detik-long" class="rounded-md bg-[#FFD2F9] w-[100px] h-[50px] text-[24px] border-[#C803AE] focus:ring-[#C803AE] outline-none">
+                    </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="mx-auto w-full">
+                <button type="submit" class="text-center py-[10px] w-full bg-[#730264] font-medium text-[18px] text-white rounded-md drop-shadow-md">SAVE SETTING</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- FLOWBITE -->
+     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- MAIN JS -->
+     <script src="main.js" defer></script>
+  </body>
+</html>
