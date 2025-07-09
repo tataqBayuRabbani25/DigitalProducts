@@ -96,6 +96,9 @@ function saveSettingsToLocalStorage() {
 
   localStorage.setItem("pomodoro-settings", JSON.stringify(data));
 
+  // Update waktu setelah disimpan
+  remainingSeconds = getRemainingSeconds(currentMode);
+
   if (!isRunning) {
     timerText.textContent = getTimeText(currentMode);
   }
@@ -122,6 +125,7 @@ function loadSettingsFromLocalStorage() {
     inputs[mode].detik.value = String(detik).padStart(2, '0');
   }
 
+  remainingSeconds = getRemainingSeconds("focus");
   timerText.textContent = getTimeText("focus");
   validateInputs();
 }
@@ -145,9 +149,9 @@ function startCountdown() {
       isRunning = false;
       startBtn.textContent = "START TIMER";
 
-      // Mainkan suara jika waktu habis
-      if (sounds[currentMode]) {
-        const sound = sounds[currentMode];
+      // Mainkan suara saat selesai
+      const sound = sounds[currentMode];
+      if (sound) {
         sound.currentTime = 0;
         sound.play().catch(err => console.warn("Audio blocked:", err));
       }
@@ -193,6 +197,7 @@ navButtons.forEach((btn, index) => {
     isRunning = false;
     startBtn.textContent = "START TIMER";
 
+    // FIX: selalu update remainingSeconds saat ganti mode
     remainingSeconds = getRemainingSeconds(currentMode);
     const m = Math.floor(remainingSeconds / 60);
     const s = remainingSeconds % 60;
